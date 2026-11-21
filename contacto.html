@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Helmut Ditsch</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <nav class="menu-navegacion">
+        <div class="menu-contenedor">
+            <a href="index.html" class="menu-logo">Helmut Ditsch</a>
+            <ul class="menu-lista">
+                <li><a href="index.html" class="menu-enlace">Inicio</a></li>
+                <li><a href="contenido1.html" class="menu-enlace">Biografía</a></li>
+                <li><a href="contenido2.html" class="menu-enlace">Estilo</a></li>
+                <li><a href="contenido3.html" class="menu-enlace">Galería</a></li>
+                <li><a href="contenido4.html" class="menu-enlace">Exposiciones</a></li>
+                <li><a href="contenido5.html" class="menu-enlace">Música</a></li>
+                <li><a href="contenido6.html" class="menu-enlace">Gira Nacional</a></li>
+                <li><a href="contacto.html" class="menu-enlace activo">Contacto</a></li>
+                <li><a href="creditos.html" class="menu-enlace">Créditos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="contenedor-principal">
+        <h1 class="titulo-seccion">Formulario de Contacto</h1>
+
+        <div id="alerta-error" class="alerta-error oculta"></div>
+        <div id="alerta-exito" class="alerta-exito oculta">¡El mensaje ha sido enviado correctamente!</div>
+
+        <form id="formulario-contacto" class="formulario-caja" onsubmit="validarFormulario(event)">
+            
+            <div class="campo-grupo">
+                <label for="campo-nombre" class="campo-etiqueta">Nombre Completo *</label>
+                <input type="text" id="campo-nombre" class="campo-entrada" placeholder="Ingresa tu nombre">
+            </div>
+
+            <div class="campo-grupo">
+                <label for="campo-correo" class="campo-etiqueta">Correo Electrónico *</label>
+                <input type="text" id="campo-correo" class="campo-entrada" placeholder="ejemplo@correo.com">
+            </div>
+
+            <div class="campo-grupo">
+                <label for="campo-asunto" class="campo-etiqueta">Asunto *</label>
+                <input type="text" id="campo-asunto" class="campo-entrada" placeholder="Motivo de contacto">
+            </div>
+
+            <div class="campo-grupo">
+                <label for="campo-mensaje" class="campo-etiqueta">Mensaje (Mínimo 10 caracteres) *</label>
+                <textarea id="campo-mensaje" class="campo-entrada" rows="5" placeholder="Escribe tu mensaje..."></textarea>
+            </div>
+
+            <button type="submit" class="boton-enviar boton-destacado" style="width: 100%;">Enviar Consulta</button>
+        </form>
+    </main>
+
+    <footer class="pie-pagina">
+        <p>2026 - Proyecto Académico Helmut Ditsch</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

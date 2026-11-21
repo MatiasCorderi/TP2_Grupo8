@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Obras - Helmut Ditsch</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <nav class="menu-navegacion">
+        <div class="menu-contenedor">
+            <a href="index.html" class="menu-logo">Helmut Ditsch</a>
+            <ul class="menu-lista">
+                <li><a href="index.html" class="menu-enlace">Inicio</a></li>
+                <li><a href="contenido1.html" class="menu-enlace">Biografía</a></li>
+                <li><a href="contenido2.html" class="menu-enlace">Estilo</a></li>
+                <li><a href="contenido3.html" class="menu-enlace activo">Galería</a></li>
+                <li><a href="contenido4.html" class="menu-enlace">Exposiciones</a></li>
+                <li><a href="contenido5.html" class="menu-enlace">Música</a></li>
+                <li><a href="contenido6.html" class="menu-enlace">Gira Nacional</a></li>
+                <li><a href="contacto.html" class="menu-enlace">Contacto</a></li>
+                <li><a href="creditos.html" class="menu-enlace">Créditos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="contenedor-principal">
+        <h1 class="titulo-seccion">Galería de Obras Monumentales</h1>
+        <p>Usa los botones a continuación para filtrar las pinturas por su categoría temáticas:</p>
+
+        <!-- FILTROS DE CATEGORÍA JS EN ESPAÑOL -->
+        <div class="contenedor-filtros">
+            <button class="boton-filtro activo" onclick="filtrarObras('todas')">Todas las Obras</button>
+            <button class="boton-filtro" onclick="filtrarObras('montana')">Montañas y Glaciares</button>
+            <button class="boton-filtro" onclick="filtrarObras('mar')">Mares</button>
+            <button class="boton-filtro" onclick="filtrarObras('monumental')">Formatos Gigantes</button>
+        </div>
+
+        <!-- GRILLA DE OBRAS (6 ELEMENTOS OBLIGATORIOS) -->
+        <div class="grilla-tarjetas" id="contenedor-obras">
+            
+            <div class="tarjeta-bloque obra-tarjeta montana monumental">
+                <div class="obra-imagen-caja fondo-gris">La Cordillera</div>
+                <div class="tarjeta-cuerpo">
+                    <h3 class="tarjeta-titulo">La Cordillera (1999)</h3>
+                    <p class="tarjeta-texto">Adquirida por el Banco Central de Austria. Consagración internacional.</p>
+                    <button class="boton-principal" onclick="mostrarModal('La Cordillera (1999)', 'Obra clave adquirida por el Banco Central de Austria (OeNB) que marcó un hito en su consagración europea.')">Ver Detalle</button>
+                </div>
+            </div>
+
+            <div class="tarjeta-bloque obra-tarjeta mar monumental">
+                <div class="obra-imagen-caja fondo-azul">El Mar II</div>
+                <div class="tarjeta-cuerpo">
+                    <h3 class="tarjeta-titulo">El Mar II (2005)</h3>
+                    <p class="tarjeta-texto">Alcanzó un récord de cotización histórico de USD 865.000 en el año 2010.</p>
+                    <button class="boton-principal" onclick="mostrarModal('El Mar II (2005)', 'Pintura monumental basada en el Océano Atlántico. Vendida por USD 865.000 en 2010 a un grupo español.')">Ver Detalle</button>
+                </div>
+            </div>
+
+            <div class="tarjeta-bloque obra-tarjeta montana monumental">
+                <div class="obra-imagen-caja fondo-oscuro">Cosmigonon</div>
+                <div class="tarjeta-cuerpo">
+                    <h3 class="tarjeta-titulo">Cosmigonon (2016)</h3>
+                    <p class="tarjeta-texto">Récord absoluto de venta del arte argentino alcanzando los USD 1.500.000.</p>
+                    <button class="boton-principal" onclick="mostrarModal('Cosmigonon (2016)', 'Considerada su obra cumbre, fue adquirida en Europa por USD 1.500.000 marcando la cotización más alta para un artista argentino vivo.')">Ver Detalle</button>
+                </div>
+            </div>
+
+            <div class="tarjeta-bloque obra-tarjeta montana monumental">
+                <div class="obra-imagen-caja fondo-gris">Glaciar Perito Moreno</div>
+                <div class="tarjeta-cuerpo">
+                    <h3 class="tarjeta-titulo">Perito Moreno (2017)</h3>
+                    <p class="tarjeta-texto">Lienzo gigante de 12 metros de largo por 2 metros de alto.</p>
+                    <button class="boton-principal" onclick="mostrarModal('Glaciar Perito Moreno (2017)', 'Lienzo monumental de 12 x 2 metros que retrata la inmensidad del glaciar patagónico.')">Ver Detalle</button>
+                </div>
+            </div>
+
+            <div class="tarjeta-bloque obra-tarjeta montana">
+                <div class="obra-imagen-caja fondo-oscuro">Altas Cumbres</div>
+                <div class="tarjeta-cuerpo">
+                    <h3 class="tarjeta-titulo">Altas Cumbres (1997)</h3>
+                    <p class="tarjeta-texto">Inspirada en sus vivencias en los Alpes del Tirol austríaco.</p>
+                    <button class="boton-principal" onclick="mostrarModal('Altas Cumbres (1997)', 'Pintada tras una larga expedición en la cordillera austríaca de Nordkette.')">Ver Detalle</button>
+                </div>
+            </div>
+
+            <div class="tarjeta-bloque obra-tarjeta mar">
+                <div class="obra-imagen-caja fondo-azul">Triumph Of Nature</div>
+                <div class="tarjeta-cuerpo">
+                    <h3 class="tarjeta-titulo">The Triumph Of Nature (2005)</h3>
+                    <p class="tarjeta-texto">Serie expuesta en el Museo Belvedere de Viena y en Lesachtal.</p>
+                    <button class="boton-principal" onclick="mostrarModal('The Triumph Of Nature (2005)', 'Exposición emblemática que reúne grandes lienzos sobre agua, hielo y desiertos.')">Ver Detalle</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- VENTANA MODAL EN ESPAÑOL -->
+    <div id="modal-obra" class="modal-fondo">
+        <div class="modal-caja">
+            <h3 id="modal-titulo" class="modal-encabezado"></h3>
+            <p id="modal-descripcion" class="modal-cuerpo"></p>
+            <button class="boton-secundario" onclick="cerrarModal()">Cerrar Ventana</button>
+        </div>
+    </div>
+
+    <footer class="pie-pagina">
+        <p>2026 - Proyecto Académico Helmut Ditsch</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
