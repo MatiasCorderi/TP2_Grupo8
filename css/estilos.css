@@ -1,0 +1,332 @@
+/* RESETEO Y ESTILOS GENERALES */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+    line-height: 1.6;
+}
+
+/* NAVEGACIÓN PRINCIPAL */
+.menu-navegacion {
+    background-color: #1a1a1a;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.menu-contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+
+.menu-logo {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.menu-lista {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.menu-enlace {
+    color: #cccccc;
+    text-decoration: none;
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-enlace:hover, .menu-enlace.activo {
+    color: #ffffff;
+    background-color: #0d6efd;
+}
+
+/* CABECERA HERO */
+.cabecera-principal {
+    background-color: #212529;
+    color: #ffffff;
+    text-align: center;
+    padding: 4rem 1.5rem;
+}
+
+.cabecera-contenido {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.titulo-principal {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.subtitulo-principal {
+    font-size: 1.25rem;
+    color: #dddddd;
+    margin-bottom: 1.5rem;
+}
+
+/* CONTENEDORES Y SECCIONES */
+.contenedor-principal {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+}
+
+.titulo-seccion {
+    font-size: 2rem;
+    border-bottom: 3px solid #0d6efd;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #1a1a1a;
+}
+
+.subtitulo-seccion {
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: #0d6efd;
+}
+
+/* GRILLAS Y TARJETAS */
+.grilla-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.tarjeta-bloque {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta-cuerpo {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tarjeta-titulo {
+    font-size: 1.25rem;
+    margin-bottom: 0.8rem;
+    color: #1a1a1a;
+}
+
+.tarjeta-texto {
+    color: #555555;
+    margin-bottom: 1.2rem;
+}
+
+/* BOTONES */
+.boton-principal, .boton-secundario, .boton-destacado, .boton-filtro {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+.boton-destacado {
+    background-color: #0d6efd;
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+.boton-destacado:hover { background-color: #0b5ed7; }
+
+.boton-principal {
+    background-color: #0d6efd;
+    color: #ffffff;
+}
+
+.boton-principal:hover { background-color: #0b5ed7; }
+
+.boton-secundario {
+    background-color: transparent;
+    border: 1px solid #1a1a1a;
+    color: #1a1a1a;
+}
+
+.boton-secundario:hover {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+/* FILTROS DE GALERÍA */
+.contenedor-filtros {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.boton-filtro {
+    background-color: #e9ecef;
+    color: #212529;
+}
+
+.boton-filtro.activo, .boton-filtro:hover {
+    background-color: #212529;
+    color: #ffffff;
+}
+
+/* IMÁGENES O PLACEHOLDERS DE OBRA */
+.obra-imagen-caja {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.fondo-azul { background-color: #1d3557; }
+.fondo-gris { background-color: #457b9d; }
+.fondo-oscuro { background-color: #1d2d44; }
+
+/* MODAL INTERACTIVO EN ESPAÑOL */
+.modal-fondo {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-caja {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal-encabezado {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+}
+
+.modal-cuerpo {
+    margin-bottom: 1.5rem;
+    color: #444444;
+}
+
+/* FORMULARIO Y ALERTAS */
+.formulario-caja {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.campo-grupo {
+    margin-bottom: 1.2rem;
+}
+
+.campo-etiqueta {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+}
+
+.campo-entrada {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.alerta-error {
+    background-color: #f8d7da;
+    color: #842029;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    border: 1px solid #f5c2c7;
+}
+
+.alerta-exito {
+    background-color: #d1e7dd;
+    color: #0f5132;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    border: 1px solid #badbcc;
+}
+
+.oculta { display: none; }
+
+/* TABLAS Y LISTAS */
+.tabla-datos {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+}
+
+.tabla-datos th, .tabla-datos td {
+    padding: 0.8rem;
+    border: 1px solid #dddddd;
+    text-align: left;
+}
+
+.tabla-cabecera {
+    background-color: #212529;
+    color: #ffffff;
+}
+
+.caja-destacada {
+    background-color: #e7f1ff;
+    border-left: 5px solid #0d6efd;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 4px;
+}
+
+/* PIE DE PÁGINA */
+.pie-pagina {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 4rem;
+}
