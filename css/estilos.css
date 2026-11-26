@@ -54,12 +54,14 @@ body {
 
 .menu-enlace:hover, .menu-enlace.activo {
     color: #ffffff;
-    background-color: #0d6efd;
+    background-color: #0477BF;
 }
 
 /* CABECERA HERO */
 .cabecera-principal {
-    background-color: #212529;
+    background-image: url('../img/banner.jpg');
+    background-size: cover;
+    background-position: center;
     color: #ffffff;
     text-align: center;
     padding: 4rem 1.5rem;
@@ -78,8 +80,9 @@ body {
 
 .subtitulo-principal {
     font-size: 1.25rem;
-    color: #dddddd;
+    color: #ffffff;
     margin-bottom: 1.5rem;
+    font-family: 'Space Grotesk', sans-serif;
 }
 
 /* CONTENEDORES Y SECCIONES */
@@ -91,7 +94,7 @@ body {
 
 .titulo-seccion {
     font-size: 2rem;
-    border-bottom: 3px solid #0d6efd;
+    border-bottom: 3px solid #0477BF;
     padding-bottom: 0.5rem;
     margin-bottom: 1.5rem;
     color: #1a1a1a;
@@ -139,6 +142,18 @@ body {
 .tarjeta-texto {
     color: #555555;
     margin-bottom: 1.2rem;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+#presentacion {
+    max-width: 90%;
+    margin: 0 auto 2rem auto;
+    background-color: #5FAAD9;
+    padding: 1.5rem;
+    border-radius: 5px;
+    color: #ffffff;
+    font-family: 'Space Grotesk', sans-serif;
+    text-align: center;
 }
 
 /* BOTONES */
@@ -155,12 +170,12 @@ body {
 }
 
 .boton-destacado {
-    background-color: #0d6efd;
-    color: #ffffff;
+    background-color: rgb(255, 255, 255, 0.8);
+    color: #0477BF;
     font-size: 1.1rem;
 }
 
-.boton-destacado:hover { background-color: #0b5ed7; }
+.boton-destacado:hover { background-color: #8DCBF2; }
 
 .boton-principal {
     background-color: #0d6efd;
@@ -171,12 +186,12 @@ body {
 
 .boton-secundario {
     background-color: transparent;
-    border: 1px solid #1a1a1a;
-    color: #1a1a1a;
+    border: 1px solid #0477BF;
+    color: #0477BF;
 }
 
 .boton-secundario:hover {
-    background-color: #1a1a1a;
+    background-color: #0477BF;
     color: #ffffff;
 }
 
