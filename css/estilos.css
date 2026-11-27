@@ -85,6 +85,18 @@ body {
     font-family: 'Space Grotesk', sans-serif;
 }
 
+/* BLOQUE DESTACADO DE PRESENTACIÓN */
+#presentacion {
+    max-width: 90%;
+    margin: 0 auto 2rem auto;
+    background-color: #5FAAD9;
+    padding: 1.5rem;
+    border-radius: 5px;
+    color: #ffffff;
+    font-family: 'Space Grotesk', sans-serif;
+    text-align: center;
+}
+
 /* CONTENEDORES Y SECCIONES */
 .contenedor-principal {
     max-width: 1200px;
@@ -107,12 +119,47 @@ body {
     color: #0d6efd;
 }
 
+/* ESTILOS PARA SECCIONES DESPLEGABLES */
+.contenedor-desplegables {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.seccion-desplegable {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.titulo-desplegable {
+    padding: 1rem 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #212529;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.titulo-desplegable:hover {
+    background-color: #0477BF;
+}
+
+.contenido-desplegable {
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+}
+
 /* GRILLAS Y TARJETAS */
 .grilla-tarjetas {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .tarjeta-bloque {
@@ -145,17 +192,6 @@ body {
     font-family: 'Space Grotesk', sans-serif;
 }
 
-#presentacion {
-    max-width: 90%;
-    margin: 0 auto 2rem auto;
-    background-color: #5FAAD9;
-    padding: 1.5rem;
-    border-radius: 5px;
-    color: #ffffff;
-    font-family: 'Space Grotesk', sans-serif;
-    text-align: center;
-}
-
 /* BOTONES */
 .boton-principal, .boton-secundario, .boton-destacado, .boton-filtro {
     display: inline-block;
@@ -170,19 +206,23 @@ body {
 }
 
 .boton-destacado {
-    background-color: rgb(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.8);
     color: #0477BF;
     font-size: 1.1rem;
 }
 
-.boton-destacado:hover { background-color: #8DCBF2; }
+.boton-destacado:hover {
+    background-color: #8DCBF2;
+}
 
 .boton-principal {
     background-color: #0d6efd;
     color: #ffffff;
 }
 
-.boton-principal:hover { background-color: #0b5ed7; }
+.boton-principal:hover {
+    background-color: #0b5ed7;
+}
 
 .boton-secundario {
     background-color: transparent;
@@ -229,7 +269,7 @@ body {
 .fondo-gris { background-color: #457b9d; }
 .fondo-oscuro { background-color: #1d2d44; }
 
-/* MODAL INTERACTIVO EN ESPAÑOL */
+/* MODAL INTERACTIVO */
 .modal-fondo {
     display: none;
     position: fixed;
@@ -309,7 +349,9 @@ body {
     border: 1px solid #badbcc;
 }
 
-.oculta { display: none; }
+.oculta {
+    display: none;
+}
 
 /* TABLAS Y LISTAS */
 .tabla-datos {
