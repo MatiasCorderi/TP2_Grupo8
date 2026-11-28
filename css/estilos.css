@@ -112,7 +112,7 @@ body {
 }
 
 /* CONTENEDOR Y TITULARES */
-.contenedor-principal {
+.contenedor-general {
 	max-width: 1200px;
 	margin: 2.5rem auto;
 	padding: 0 1.5rem;
