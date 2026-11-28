@@ -1,3 +1,14 @@
+/* Paleta de colores */
+
+:root {
+  --azul-general: #0477BF;
+  --azul-profundo: #305096;
+  --azul-oscuro: #101f42;
+  --rosa-tierra: #BF99BD;
+  --negro-gris: #212529;
+  --blanco: #D8E2E8;
+}
+
 /* RESETEO Y GENERALES */
 * {
 	box-sizing: border-box;
@@ -265,6 +276,9 @@ body {
 	margin-bottom: 0.8rem;
 }
 
+.biografia-texto {
+    max-width: 700px;
+}
 
 /* BOTONES UNIFICADOS */
 .boton-principal,
@@ -300,12 +314,12 @@ body {
 
 
 .boton-destacado {
-	background-color: #002574;
+	background-color: #5FAAD9;
 	color: #ffffff;
 }
 
 .boton-destacado:hover {
-	background-color: #000000;
+	background-color: #BF99BD;
 }
 
 .boton-secundario {
@@ -461,4 +475,26 @@ body {
 	padding: 1.5rem;
 	margin-top: 4rem;
     font-family: "Barlow", sans-serif;
+}
+
+/* OTROS ELEMENTOS */
+
+.imagen-biografia-uno {
+    float: right;
+    clear: right;
+    width: 340px;
+    margin: 0 0 1.0rem 1.5rem;
+    margin-top: 2rem;
+    border-radius: 3px;
+}
+
+.imagen-biografia-dos {
+    float: right;
+    clear: right;
+    width: 340px;
+    margin: 0 0 1.0rem 1.5rem;
+    margin-top: 1rem;
+    border-radius: 3px;
+    
+    
 }
