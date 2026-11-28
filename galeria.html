@@ -4,10 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galería de Obras - Helmut Ditsch</title>
+    
+    <!-- 1. Framework CSS (Tailwind CSS via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 2. Librería JS Externa (SweetAlert2) -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- 3. Estilos Personalizados -->
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
 
+    <!-- MENÚ DE NAVEGACIÓN -->
     <nav class="menu-navegacion">
         <div class="menu-contenedor">
             <a href="index.html" class="menu-logo">Helmut Ditsch</a>
@@ -26,88 +35,122 @@
     </nav>
 
     <main class="contenedor-principal">
-        <h1 class="titulo-seccion">Galería de Obras Monumentales</h1>
-        <p>Usa los botones a continuación para filtrar las pinturas por su categoría temáticas:</p>
+        <h1 class="text-3xl font-bold mb-4 border-b-4 border-blue-600 pb-2">Galería de Obras Monumentales</h1>
+        <p class="mb-6 text-gray-700">Explora la producción del artista. Usa los botones para filtrar por temática:</p>
 
-        <!-- FILTROS DE CATEGORÍA JS EN ESPAÑOL -->
-        <div class="contenedor-filtros">
-            <button class="boton-filtro activo" onclick="filtrarObras('todas')">Todas las Obras</button>
-            <button class="boton-filtro" onclick="filtrarObras('montana')">Montañas y Glaciares</button>
-            <button class="boton-filtro" onclick="filtrarObras('mar')">Mares</button>
-            <button class="boton-filtro" onclick="filtrarObras('monumental')">Formatos Gigantes</button>
+        <!-- FILTROS DE CATEGORÍA -->
+        <div class="flex gap-2 mb-8 flex-wrap" id="contenedor-filtros">
+            <!-- El botón 'Todas' inicia activo con fondo negro y texto blanco -->
+            <button class="boton-filtro activo" data-categoria="todas">Todas</button>
+            <button class="boton-filtro" data-categoria="montana">Montañas y Glaciares</button>
+            <button class="boton-filtro" data-categoria="mar">Mares</button>
+            <button class="boton-filtro" data-categoria="monumental">Formatos Gigantes</button>
         </div>
 
-        <!-- GRILLA DE OBRAS (6 ELEMENTOS OBLIGATORIOS) -->
+        <!-- GRILLA DE TARJETAS CON IMÁGENES REALES -->
         <div class="grilla-tarjetas" id="contenedor-obras">
             
-            <div class="tarjeta-bloque obra-tarjeta montana monumental">
-                <div class="obra-imagen-caja fondo-gris">La Cordillera</div>
-                <div class="tarjeta-cuerpo">
+            <!-- 1. La Cordillera (1999) -->
+            <div class="tarjeta-obra montana monumental" style="background-image: url('img/cordillera.jpg');">
+                <div class="tarjeta-capa-oscura">
                     <h3 class="tarjeta-titulo">La Cordillera (1999)</h3>
-                    <p class="tarjeta-texto">Adquirida por el Banco Central de Austria. Consagración internacional.</p>
-                    <button class="boton-principal" onclick="mostrarModal('La Cordillera (1999)', 'Obra clave adquirida por el Banco Central de Austria (OeNB) que marcó un hito en su consagración europea.')">Ver Detalle</button>
+                    <p class="tarjeta-texto">Banco Central de Austria (OeNB).</p>
+                    <button class="btn-detalle bg-blue-600 text-white px-3 py-1 rounded text-sm hover:bg-blue-700" 
+                            data-titulo="La Cordillera (1999)" 
+                            data-imagen="img/cordillera.jpg"
+                            data-desc="Óleo monumental adquirido por el Banco Central de Austria (OeNB) que impulsó su proyección internacional en Europa. Medida original: 150cm x 1190 cm.">
+                        Ver Detalle
+                    </button>
                 </div>
             </div>
 
-            <div class="tarjeta-bloque obra-tarjeta mar monumental">
-                <div class="obra-imagen-caja fondo-azul">El Mar II</div>
-                <div class="tarjeta-cuerpo">
+            <!-- 2. El Mar II (2005) -->
+            <div class="tarjeta-obra mar monumental" style="background-image: url('img/mar_2.jpg');">
+                <div class="tarjeta-capa-oscura">
                     <h3 class="tarjeta-titulo">El Mar II (2005)</h3>
-                    <p class="tarjeta-texto">Alcanzó un récord de cotización histórico de USD 865.000 en el año 2010.</p>
-                    <button class="boton-principal" onclick="mostrarModal('El Mar II (2005)', 'Pintura monumental basada en el Océano Atlántico. Vendida por USD 865.000 en 2010 a un grupo español.')">Ver Detalle</button>
+                    <p class="tarjeta-texto">Récord de USD 865.000 en 2010.</p>
+                    <button class="btn-detalle bg-blue-600 text-white px-3 py-1 rounded text-sm hover:bg-blue-700" 
+                            data-titulo="El Mar II (2005)" 
+                            data-imagen="img/mar_2.jpg"
+                            data-desc="Inspirada en el Océano Atlántico. Vendida en 2010 por USD 865.000 superando el récord histórico de Antonio Berni. Medida original: 150cm x 600 cm.">
+                        Ver Detalle
+                    </button>
                 </div>
             </div>
 
-            <div class="tarjeta-bloque obra-tarjeta montana monumental">
-                <div class="obra-imagen-caja fondo-oscuro">Cosmigonon</div>
-                <div class="tarjeta-cuerpo">
+            <!-- 3. Cosmigonon (2016) -->
+            <div class="tarjeta-obra montana monumental" style="background-image: url('img/cosmigonon.jpg');">
+                <div class="tarjeta-capa-oscura">
                     <h3 class="tarjeta-titulo">Cosmigonon (2016)</h3>
-                    <p class="tarjeta-texto">Récord absoluto de venta del arte argentino alcanzando los USD 1.500.000.</p>
-                    <button class="boton-principal" onclick="mostrarModal('Cosmigonon (2016)', 'Considerada su obra cumbre, fue adquirida en Europa por USD 1.500.000 marcando la cotización más alta para un artista argentino vivo.')">Ver Detalle</button>
+                    <p class="tarjeta-texto">Récord histórico de USD 1.500.000.</p>
+                    <button class="btn-detalle bg-blue-600 text-white px-3 py-1 rounded text-sm hover:bg-blue-700" 
+                            data-titulo="Cosmigonon (2016)" 
+                            data-imagen="img/cosmigonon.jpg"
+                            data-desc="Obra cumbre vendida en Europa por USD 1.500.000, marca máxima para un artista plástico argentino vivo. Medida original: 730cm x 273cm.">
+                        Ver Detalle
+                    </button>
                 </div>
             </div>
 
-            <div class="tarjeta-bloque obra-tarjeta montana monumental">
-                <div class="obra-imagen-caja fondo-gris">Glaciar Perito Moreno</div>
-                <div class="tarjeta-cuerpo">
+            <!-- 4. Perito Moreno (2017) -->
+            <div class="tarjeta-obra montana monumental" style="background-image: url('img/perito_moreno.webp');">
+                <div class="tarjeta-capa-oscura">
                     <h3 class="tarjeta-titulo">Perito Moreno (2017)</h3>
-                    <p class="tarjeta-texto">Lienzo gigante de 12 metros de largo por 2 metros de alto.</p>
-                    <button class="boton-principal" onclick="mostrarModal('Glaciar Perito Moreno (2017)', 'Lienzo monumental de 12 x 2 metros que retrata la inmensidad del glaciar patagónico.')">Ver Detalle</button>
+                    <p class="tarjeta-texto">Lienzo gigante de 12 x 2 metros.</p>
+                    <button class="btn-detalle bg-blue-600 text-white px-3 py-1 rounded text-sm hover:bg-blue-700" 
+                            data-titulo="Glaciar Perito Moreno (2017)" 
+                            data-imagen="img/perito_moreno.webp"
+                            data-desc="Lienzo de dimensiones gigantescas que recrea la inmensidad del glaciar patagónico. Medida original: 1200cm x 200cm.">
+                        Ver Detalle
+                    </button>
                 </div>
             </div>
 
-            <div class="tarjeta-bloque obra-tarjeta montana">
-                <div class="obra-imagen-caja fondo-oscuro">Altas Cumbres</div>
-                <div class="tarjeta-cuerpo">
-                    <h3 class="tarjeta-titulo">Altas Cumbres (1997)</h3>
-                    <p class="tarjeta-texto">Inspirada en sus vivencias en los Alpes del Tirol austríaco.</p>
-                    <button class="boton-principal" onclick="mostrarModal('Altas Cumbres (1997)', 'Pintada tras una larga expedición en la cordillera austríaca de Nordkette.')">Ver Detalle</button>
+            <!-- 5. Point Of No Return II -->
+            <div class="tarjeta-obra monumental" style="background-image: url('img/retorno_2.jpg');">
+                <div class="tarjeta-capa-oscura">
+                    <h3 class="tarjeta-titulo">Point Of No Return II (2005)</h3>
+                    <p class="tarjeta-texto">Serie Puna de Atacama.</p>
+                    <button class="btn-detalle bg-blue-600 text-white px-3 py-1 rounded text-sm hover:bg-blue-700" 
+                            data-titulo="Point Of No Return II (2005)" 
+                            data-imagen="img/retorno_2.jpg"
+                            data-desc="Óleo hiperrealista inspirado en los salares de la Puna de Atacama que retrata la inmensidad de la naturaleza extrema. Medida original: 150cm x 240cm.">
+                        Ver Detalle
+                    </button>
                 </div>
             </div>
 
-            <div class="tarjeta-bloque obra-tarjeta mar">
-                <div class="obra-imagen-caja fondo-azul">Triumph Of Nature</div>
-                <div class="tarjeta-cuerpo">
-                    <h3 class="tarjeta-titulo">The Triumph Of Nature (2005)</h3>
-                    <p class="tarjeta-texto">Serie expuesta en el Museo Belvedere de Viena y en Lesachtal.</p>
-                    <button class="boton-principal" onclick="mostrarModal('The Triumph Of Nature (2005)', 'Exposición emblemática que reúne grandes lienzos sobre agua, hielo y desiertos.')">Ver Detalle</button>
+            <!-- 6. The Triumph Of Nature -->
+            <div class="tarjeta-obra mar" style="background-image: url('img/naturaleza.jpg');">
+                <div class="tarjeta-capa-oscura">
+                    <h3 class="tarjeta-titulo">The Triumph Of Nature (2006)</h3>
+                    <p class="tarjeta-texto">Inspirada en el Glaciar Perito Moreno.</p>
+                    <button class="btn-detalle bg-blue-600 text-white px-3 py-1 rounded text-sm hover:bg-blue-700" 
+                            data-titulo="The Triumph Of Nature (2006)" 
+                            data-imagen="img/naturaleza.jpg"
+                            data-desc="Representación del frente helado y los picos azules del glaciar patagónico, cuya reproducción permaneció exhibida durante más de una década en la Casa Rosada. Medida original: 130cm x 400cm.">
+                        Ver Detalle
+                    </button>
                 </div>
             </div>
 
         </div>
     </main>
 
-    <!-- VENTANA MODAL EN ESPAÑOL -->
+    <!-- VENTANA MODAL CON VISOR 16:9 -->
     <div id="modal-obra" class="modal-fondo">
         <div class="modal-caja">
-            <h3 id="modal-titulo" class="modal-encabezado"></h3>
-            <p id="modal-descripcion" class="modal-cuerpo"></p>
-            <button class="boton-secundario" onclick="cerrarModal()">Cerrar Ventana</button>
+            <div class="contenedor-imagen-16-9">
+                <img id="modal-imagen" src="" alt="Obra de Helmut Ditsch">
+            </div>
+            <h3 id="modal-titulo" class="text-xl font-bold mb-2"></h3>
+            <p id="modal-descripcion" class="text-gray-700 mb-4"></p>
+            <button id="btn-cerrar-modal" class="bg-gray-800 text-white px-4 py-2 rounded">Cerrar Ventana</button>
         </div>
     </div>
 
     <footer class="pie-pagina">
-        <p>2026 - Proyecto Académico Helmut Ditsch</p>
+        <p>Página sobre Helmut Ditsch | Informática General 2026</p>
     </footer>
 
     <script src="js/script.js"></script>

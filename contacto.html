@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto - Helmut Ditsch</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
@@ -27,12 +28,14 @@
 
     <main class="contenedor-principal">
         <h1 class="titulo-seccion">Formulario de Contacto</h1>
+        <p class="mb-6 text-center text-gray-600">Completa el formulario para enviar tus consultas.</p>
 
-        <div id="alerta-error" class="alerta-error oculta"></div>
-        <div id="alerta-exito" class="alerta-exito oculta">¡El mensaje ha sido enviado correctamente!</div>
-
-        <form id="formulario-contacto" class="formulario-caja" onsubmit="validarFormulario(event)">
+        <form id="formulario-contacto" class="formulario-caja">
             
+            <!-- Cajas donde JavaScript colocará los mensajes de alerta -->
+            <div id="alerta-error" class="alerta-error oculta"></div>
+            <div id="alerta-exito" class="alerta-exito oculta">¡Mensaje enviado con éxito! Nos comunicaremos a la brevedad.</div>
+
             <div class="campo-grupo">
                 <label for="campo-nombre" class="campo-etiqueta">Nombre Completo *</label>
                 <input type="text" id="campo-nombre" class="campo-entrada" placeholder="Ingresa tu nombre">
@@ -53,12 +56,12 @@
                 <textarea id="campo-mensaje" class="campo-entrada" rows="5" placeholder="Escribe tu mensaje..."></textarea>
             </div>
 
-            <button type="submit" class="boton-enviar boton-destacado" style="width: 100%;">Enviar Consulta</button>
+            <button type="submit" class="boton-destacado w-full py-3">Enviar Consulta</button>
         </form>
     </main>
 
     <footer class="pie-pagina">
-        <p>2026 - Proyecto Académico Helmut Ditsch</p>
+        <p>Página sobre Helmut Ditsch | Informática General 2026</p>
     </footer>
 
     <script src="js/script.js"></script>
