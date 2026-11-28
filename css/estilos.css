@@ -479,22 +479,11 @@ body {
 
 /* OTROS ELEMENTOS */
 
-.imagen-biografia-uno {
+.imagen-biografia {
     float: right;
     clear: right;
     width: 340px;
     margin: 0 0 1.0rem 1.5rem;
     margin-top: 2rem;
     border-radius: 3px;
-}
-
-.imagen-biografia-dos {
-    float: right;
-    clear: right;
-    width: 340px;
-    margin: 0 0 1.0rem 1.5rem;
-    margin-top: 1rem;
-    border-radius: 3px;
-    
-    
 }
